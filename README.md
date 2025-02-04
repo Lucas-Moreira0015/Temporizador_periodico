@@ -25,8 +25,7 @@ A cada **3 segundos**, o sistema avança para o próximo estado, seguindo uma se
 - **1x LED vermelho**  
 - **1x LED azul**  
 - **1x LED verde**  
-- **3x Resistores de 330Ω** (para limitar a corrente nos LEDs)  
-- **Fios jumper e protoboard**  
+- **3x Resistores de 330Ω** (para limitar a corrente nos LEDs)   
 
 ## ⚙️ Estrutura do Código  
 
