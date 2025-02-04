@@ -1,4 +1,5 @@
 # Controle de LEDs com Temporizador no Raspberry Pi Pico – Simulação de Semáforo
+Autor: Lucas Moreira da Silva
 
 ## 📌 Descrição  
 
@@ -64,5 +65,3 @@ ATENÇÃO
 3 segundos - Próximo sinal
 SIGA
 3 segundos - Próximo sinal
-
-Autor: Lucas Moreira da Silva
