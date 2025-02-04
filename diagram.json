@@ -41,14 +41,14 @@
     {
       "type": "wokwi-resistor",
       "id": "r2",
-      "top": 3.95,
+      "top": 13.55,
       "left": -153.6,
       "attrs": { "value": "330" }
     },
     {
       "type": "wokwi-resistor",
       "id": "r3",
-      "top": 61.55,
+      "top": 71.15,
       "left": -153.6,
       "attrs": { "value": "330" }
     }
@@ -57,14 +57,14 @@
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
     [ "pico:GP11", "r3:2", "green", [ "h0" ] ],
-    [ "pico:GP12", "r2:2", "green", [ "h-73.25", "v-147.21" ] ],
-    [ "pico:GP13", "r1:2", "green", [ "h-44.45", "v-195.21" ] ],
-    [ "r1:1", "led1:A", "green", [ "v0" ] ],
-    [ "r2:1", "led3:A", "green", [ "v0" ] ],
-    [ "r3:1", "led2:A", "green", [ "v0" ] ],
-    [ "pico:GND.4", "led1:C", "black", [ "h-207.65", "v-204.81" ] ],
-    [ "pico:GND.1", "led3:C", "black", [ "h0" ] ],
-    [ "pico:GND.2", "led2:C", "black", [ "h0" ] ]
+    [ "pico:GP12", "r2:2", "gold", [ "h-73.25", "v-147.21" ] ],
+    [ "pico:GP13", "r1:2", "red", [ "h-44.45", "v-195.21" ] ],
+    [ "r1:1", "led1:A", "red", [ "v0" ] ],
+    [ "r2:1", "led3:A", "gold", [ "v0" ] ],
+    [ "r3:1", "led2:A", "green", [ "h-19.2", "v-9.6" ] ],
+    [ "led1:C", "pico:GND.4", "black", [ "v0", "h-28.4", "v211.2" ] ],
+    [ "led2:C", "pico:GND.4", "black", [ "v9.6", "h-28.4", "v99.21" ] ],
+    [ "led3:C", "pico:GND.4", "black", [ "v0", "h-28.4", "v163.2" ] ]
   ],
   "dependencies": {}
 }
