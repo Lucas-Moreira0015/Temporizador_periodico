@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/simulacao_semaforo.uf2'
+elf = 'build/simulacao_semaforo.elf'
