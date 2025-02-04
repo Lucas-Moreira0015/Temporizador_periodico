@@ -1,47 +1,68 @@
-Controle de LEDs com Temporizador no Raspberry Pi Pico, simulanda um semafaro.
+# Controle de LEDs com Temporizador no Raspberry Pi Pico – Simulação de Semáforo
 
-Descri��o:
+## 📌 Descrição  
 
-Este projeto implementa o controle de tr�s LEDs (vermelho, azul e verde) utilizando um temporizador repetitivo na Raspberry Pi Pico. O sistema alterna entre os LEDs a cada 3 segundos e exibe mensagens na sa�da serial para indicar os estados do sistema, simulando um semafaro, s� que trocando a cor amarela pela azul.
+Este projeto implementa um sistema de controle para três LEDs (**vermelho, azul e verde**) utilizando um **temporizador repetitivo** na **Raspberry Pi Pico**.  
 
-Os estados do LED seguem a seguinte l�gica:
+O objetivo é simular um **semáforo**, mas substituindo a cor **amarela** pela **azul**. Os LEDs alternam de estado a cada **3 segundos**, e mensagens são exibidas na saída serial para indicar o estado atual do sistema.  
 
-Estado 0: LED vermelho aceso, LEDs azul e verde apagados. (Mensagem: "PARE")
+## 🔄 Funcionamento  
 
-Estado 1: LED azul aceso, LEDs vermelho e verde apagados. (Mensagem: "ATEN��O")
+O sistema segue a seguinte lógica de transição de estados:  
 
-Estado 2: LED verde aceso, LEDs vermelho e azul apagados. (Mensagem: "SIGA")
+| Estado | LED Ativo | Mensagem Serial |
+|--------|----------|----------------|
+| **0** | 🔴 Vermelho | **"PARE"** |
+| **1** | 🔵 Azul | **"ATENÇÃO"** |
+| **2** | 🟢 Verde | **"SIGA"** |
 
-Componentes Necess�rios:
+A cada **3 segundos**, o sistema avança para o próximo estado, seguindo uma sequência cíclica.  
 
-Raspberry Pi Pico
+## 🛠️ Componentes Necessários  
 
-3 LEDs (vermelho, azul e verde)
+- **1x Raspberry Pi Pico**  
+- **1x LED vermelho**  
+- **1x LED azul**  
+- **1x LED verde**  
+- **3x Resistores de 330Ω** (para limitar a corrente nos LEDs)  
+- **Fios jumper e protoboard**  
 
-3 resistores de 330? (para limitar a corrente nos LEDs)
+## ⚙️ Estrutura do Código  
 
-Fios e protoboard
+O código segue os seguintes passos:  
 
-Funcionamento
+1. **Configuração dos pinos GPIO** da Raspberry Pi Pico para controlar os LEDs.  
+2. **Configuração de um temporizador repetitivo** para alternar os LEDs a cada **3 segundos**.  
+3. **Execução de um loop infinito**, onde:  
+   - O temporizador altera os LEDs conforme a lógica do semáforo.  
+   - O estado atual é exibido na saída serial.  
 
-O programa inicializa os pinos GPIO da Raspberry Pi Pico.
+## 🚀 Instalação e Execução  
 
-Um temporizador repetitivo � configurado para alternar os LEDs a cada 3 segundos.
+### 1️⃣ **Prepare o ambiente de desenvolvimento**  
+- Instale o SDK do **Raspberry Pi Pico**.  
+- Configure a **IDE** (VS Code ou outro ambiente compatível).  
 
-O loop principal mant�m a execu��o e imprime mensagens na sa�da serial conforme o estado atual.
+### 2️⃣ **Monte o circuito** conforme a seguinte ligação:  
 
-Os LEDs mudam de estado seguindo uma sequ�ncia c�clica de tr�s passos.
+- **LED Vermelho** → GPIO **13**  
+- **LED Azul** → GPIO **12**  
+- **LED Verde** → GPIO **11**  
+- **Resistores de 330Ω** em série com cada LED  
+- **GND** comum para os LEDs  
 
-Estrutura do C�digo:
+### 3️⃣ **Compile e carregue o código** na Raspberry Pi Pico.  
 
-Configura os pinos GPIO para os LEDs.
+### 4️⃣ **Monitore a saída serial** para visualizar os estados do semáforo.  
 
-Usa um temporizador repetitivo para alternar os estados.
+## 📟 Exemplo de Saída Serial  
 
-Imprime mensagens na sa�da serial para indicar os estados do sistema.
+```plaintext
+PARE
+3 segundos - Próximo sinal
+ATENÇÃO
+3 segundos - Próximo sinal
+SIGA
+3 segundos - Próximo sinal
 
-Mant�m o ciclo de execu��o de forma infinita.
-
-Autor: Mateus Moreira da Silva
-
-Este projeto foi desenvolvido e testado pelo autor com base na utiliza��o da Raspberry Pi Pico e suas bibliotecas.
+Autor: Lucas Moreira da Silva
